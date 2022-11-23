@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<!--
+
+display to user with image and functionality in chrome extension
+
+-->
+
+<!-- <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen"/> -->
+
+<style>
+	h1 {text-align: center; color: black; font-size: 40px;}
+	hr {border-top: 2px solid black;}
+	body {border:none}
+
+	.center{
+		text-align: center;
+	}
+	.top{
+		vertical-align: top;
+	}
+
+	.dropbtn {
+	  background-color: white;
+	  color: white;
+	  padding: 8px;
+	  font-size: 16px;
+	  border: none;
+	  cursor: pointer;
+	}
+
+	.dropbtn:hover, .dropbtn:focus {
+	  color: white;
+	}
+
+	.dropdown {
+	  position: relative;
+	  display: inline-block;
+	  float:left;
+	}
+
+	.dropdown-content {
+	  display: none;
+	  position: absolute;
+	  background-color: lightgrey;
+	  min-width: 160px;
+	  overflow: auto;
+	  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	  z-index: 1;
+	}
+
+	.dropdown-content a {
+	  color: black;
+	  padding: 12px 16px;
+	  text-decoration: none;
+	  display: block;
+		border: 2px solid black
+	}
+
+	.dropdown a:hover {background-color: #ddd;}
+
+	.show {display: block;}
+
+	* {box-sizing: border-box}
+	body {font-family: Verdana, sans-serif; margin:0}
+	.mySlides {display: none}
+	img {vertical-align: middle;}
+</style>
+<h1> Software Assisted Web Navigation </h1>
+<hr>
+<br>
+<body class = "b1">
+
+	<div class="dropdown">
+	  <input type="image" src="/Users/pattyl21/Desktop/STEM_site images/one/menu.png" width = 70 height = auto class="dropbtn" onclick = "dropdown1()"/>
+	  <div id="myDropdown" class="dropdown-content">
+	    <a href="#1">Link1</a>
+	    <a href="#2">Link2</a>
+	    <a href="#3">Link3</a>
+	  </div>
+	</div>
+	<div class = "center">
+			<input type="text" id="srch" name="fname" placeholder = "search" value="" size = "20" style="font-size:25pt;" class = "top">
+			<input type="image" src="/Users/pattyl21/Desktop/STEM_site images/one/search.png" alt="Search" onclick="search()" class = "top" width="42" height=auto>
+	</div>
+  <br><br><br>
+	<div class = "center">
+		<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSrwBT-J3kK95ykWNWyKJg4scH2K3GltLokPgMPkOlatBCje07IjDOHindjqFwYkRe7JvuCVYG6ILHr/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+  </div>
+
+	<script>
+
+	function search(){
+    var inputVal = document.getElementById("srch").value;
+		window.open('https://www.google.com/search?q='+ inputVal, '_blank');
+  }
+	function dropdown1() {
+	  document.getElementById("myDropdown").classList.toggle("show");
+	}
+	window.onclick = function(event) {
+	  if (!event.target.matches('.dropbtn')) {
+	    var dropdowns = document.getElementsByClassName("dropdown-content");
+	    var i;
+	    for (i = 0; i < dropdowns.length; i++) {
+	      var openDropdown = dropdowns[i];
+	      if (openDropdown.classList.contains('show')) {
+	        openDropdown.classList.remove('show');
+	      }
+	    }
+	  }
+	}
+	</script>
+</body>
+</html>
